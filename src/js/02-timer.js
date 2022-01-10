@@ -57,10 +57,10 @@ function convertMs(ms) {
 }
 
 function timer({ days, hours, minutes, seconds }) {
-  refs.days.textContent = `${days}`;
-  refs.hours.textContent = `${hours}`;
-  refs.minutes.textContent = `${minutes}`;
-  refs.second.textContent = `${seconds}`;
+  refs.days.textContent = days;
+  refs.hours.textContent = hours;
+  refs.minutes.textContent = minutes;
+  refs.second.textContent = seconds;
 }
 
 function addLeadingZero(value) {
