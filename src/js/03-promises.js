@@ -17,19 +17,6 @@ form.addEventListener('submit', e => {
       delay;
     }
 
-    function createPromise(position, delay) {
-      return new Promise((resolve, reject) => {
-        setTimeout(() => {
-          let shouldResolve = Math.random() > 0.3;
-          if (shouldResolve) {
-            resolve({ position, delay });
-          } else {
-            reject({ position, delay });
-          }
-        }, delay);
-      });
-    }
-
     createPromise(position, delay)
       .then(({ position, delay }) => {
         Notiflix.Notify.success(`Fulfilled promise ${position} in ${delay}ms`);
@@ -40,3 +27,17 @@ form.addEventListener('submit', e => {
   }
   e.currentTarget.reset();
 });
+
+function createPromise(position, delay) {
+  console.log(position);
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      let shouldResolve = Math.random() > 0.3;
+      if (shouldResolve) {
+        resolve({ position, delay });
+      } else {
+        reject({ position, delay });
+      }
+    }, delay);
+  });
+}
